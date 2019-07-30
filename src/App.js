@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import BtcButton from './components/BtcButton.js';
 
 function App() {
   return (
@@ -8,16 +9,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Click Button Below to Fetch Price of bitcoin ($BTC)
+          Welcome to the Bitcoin Price Fetcher App
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <BtcButton />
+        </div>
       </header>
     </div>
   );

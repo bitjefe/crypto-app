@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './bitcoin.svg';
 import './App.css';
 import BtcButton from './components/BtcButton.js';
 

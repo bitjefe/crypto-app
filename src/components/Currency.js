@@ -1,4 +1,5 @@
 import React from 'react';
+import './Currency.css';
 
 const Currency = props => {
   const {
@@ -6,9 +7,7 @@ const Currency = props => {
   } = props.data
 
   return (
-    <li className = "currency">
-      <h1>${(+price_usd).toFixed(2)}</h1>
-    </li>
+    <p className = "currency">${(+price_usd).toFixed(2)}</p>
   )
 }
 

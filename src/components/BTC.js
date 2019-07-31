@@ -38,7 +38,7 @@ class BTC extends React.Component{
     ))
     return(
       <div className = "crypto-container">
-        <ul className = "crypto"> {crypto} </ul>
+         {crypto} 
       </div>
     )
   }

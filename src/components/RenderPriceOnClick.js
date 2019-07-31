@@ -1,37 +1,35 @@
 import React from 'react';
-import axios from 'axios';
-import Currency from './Currency.js';
 import BTC from './BTC.js';
 
 class RenderPriceOnClick extends React.Component {
   constructor(props) {
     super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
+    this.handleFetchBtcPriceClick = this.handleFetchBtcPriceClick.bind(this);
+    this.handleHideBtcPriceClick = this.handleHideBtcPriceClick.bind(this);
+    this.state = {isPriceDisplayed: false};
   }
 
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
+  handleFetchBtcPriceClick() {
+    this.setState({isPriceDisplayed: true});
   }
 
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
+  handleHideBtcPriceClick() {
+    this.setState({isPriceDisplayed: false});
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isPriceDisplayed = this.state.isPriceDisplayed;
     let button;
 
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    if (isPriceDisplayed) {
+      button = <HideBtcPrice onClick={this.handleHideBtcPriceClick} />;
     } else {
-      button = <LoginButton onClick={this.handleLoginClick} />;
+      button = <FetchBtcPrice onClick={this.handleFetchBtcPriceClick} />;
     }
 
     return (
       <div>
-        <Greeting isLoggedIn={isLoggedIn} />
+        <Greeting isPriceDisplayed={isPriceDisplayed} />
         {button}
       </div>
     );
@@ -47,14 +45,14 @@ function GuestGreeting(props) {
 }
 
 function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
+  const isPriceDisplayed = props.isPriceDisplayed;
+  if (isPriceDisplayed) {
     return <UserGreeting />;
   }
   return <GuestGreeting />;
 }
 
-function LoginButton(props) {
+function FetchBtcPrice(props) {
   return (
     <button onClick={props.onClick}>
       Click to BTC Price
@@ -62,7 +60,7 @@ function LoginButton(props) {
   );
 }
 
-function LogoutButton(props) {
+function HideBtcPrice(props) {
   return (
     <button onClick={props.onClick}>
       Click For Hide Price

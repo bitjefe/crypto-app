@@ -10,5 +10,4 @@ const Currency = props => {
     <p className = "currency">${(+price_usd).toFixed(2)}</p>
   )
 }
-
 export default Currency;

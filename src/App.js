@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './bitcoin.svg';
+import logo from './bitcoinOrange.svg';
 import './App.css';
-import BTC from './components/BTC.js';
 import RenderPriceOnClick from './components/RenderPriceOnClick.js'
 
 function App() {

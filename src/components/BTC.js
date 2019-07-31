@@ -3,6 +3,17 @@ import axios from 'axios';
 import Currency from './Currency.js'
 
 class BTC extends React.Component{
+  constructor(props) {
+     super(props)
+     this.state = {
+       data: [
+         {
+           price_usd:'0'
+         }
+       ],
+     }
+   }
+
   fetchCurrencyData = () => {
     axios
       .get('https://api.coinmarketcap.com/v1/ticker/?limit=10')
@@ -17,20 +28,10 @@ class BTC extends React.Component{
   }
 
 
-componentDidMount(){
-  this.fetchCurrencyData()
-}
+  componentDidMount(){
+    this.fetchCurrencyData()
+  }
 
-constructor(props) {
-   super(props)
-   this.state = {
-     data: [
-       {
-         price_usd:'0'
-       }
-     ],
-   }
- }
   render(){
     let crypto = this.state.data.map(currency => (
       <Currency data = {currency} key={currency.id} />

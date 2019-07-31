@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './bitcoin.svg';
 import './App.css';
 import BTC from './components/BTC.js';
-import BtcButton from './components/BtcButton.js';
+import RenderPriceOnClick from './components/RenderPriceOnClick.js'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           Welcome to the Bitcoin Price Fetcher App
         </h1>
         <div>
-          <BtcButton />
+          <RenderPriceOnClick />
         </div>
       </header>
     </div>

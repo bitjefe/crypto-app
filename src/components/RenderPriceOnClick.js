@@ -1,5 +1,6 @@
 import React from 'react';
 import BTC from './BTC.js';
+import './RenderPriceOnClick.css';
 
 class RenderPriceOnClick extends React.Component {
   constructor(props) {
@@ -54,16 +55,16 @@ function Greeting(props) {
 
 function FetchBtcPrice(props) {
   return (
-    <button onClick={props.onClick}>
-      Click to BTC Price
+    <button className="large" onClick={props.onClick} >
+      Click for BTC Price
     </button>
   );
 }
 
 function HideBtcPrice(props) {
   return (
-    <button onClick={props.onClick}>
-      Click For Hide Price
+    <button className ="large" onClick={props.onClick}>
+      Click to Hide Price
     </button>
   );
 }

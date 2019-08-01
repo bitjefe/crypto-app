@@ -8,7 +8,7 @@ class BTC extends React.Component{
      this.state = {
        data: [
          {
-           price_usd:'0'
+           price_usd:' '
          }
        ],
      }
@@ -38,7 +38,7 @@ class BTC extends React.Component{
     ))
     return(
       <div className = "crypto-container">
-         {crypto} 
+         {crypto}
       </div>
     )
   }
